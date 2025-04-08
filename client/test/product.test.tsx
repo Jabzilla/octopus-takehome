@@ -18,6 +18,24 @@ test("should be able to increase and decrease product quantity", async () => {
   expect(currentQuantity).toHaveTextContent("1");
 });
 
+test("should not be able to decrease product quantity past 1", async () => {
+  const { getByText, getByTitle } = render(<Product />);
+
+  const increaseQuantity = getByText("+");
+
+  const currentQuantity = getByTitle("Current quantity");
+  expect(currentQuantity).toHaveTextContent("1");
+
+  fireEvent.click(increaseQuantity);
+  expect(currentQuantity).toHaveTextContent("2");
+
+  const decreaseQuantity = getByText("-");
+
+  fireEvent.click(decreaseQuantity);
+  expect(currentQuantity).toHaveTextContent("1");
+});
+
+
 test("should be able to add items to the basket", async () => {
   const { getByText, getByTitle } = render(<Product />);
 
