@@ -1,3 +1,5 @@
+import { Button } from "../components/button/Button";
+
 export default function Home() {
   return (
     <main>
@@ -13,6 +15,7 @@ export default function Home() {
           Get started by visiting the <code>/product</code> URL and editing{" "}
           <code>client/pages/product.js</code>
         </p>
+        <Button />
       </div>
     </main>
   );
