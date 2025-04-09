@@ -22,7 +22,7 @@
     "@tanstack/eslint-plugin-query": "^5.72.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-    "eslint": "^8.19.0",
+    "eslint": "^9.24.0",
     "eslint-config-next": "^15.2.4",
     "husky": "^9.1.6",
     "jest": "^28.1.2",
