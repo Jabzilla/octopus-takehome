@@ -18,12 +18,10 @@ export const ProductSelector = ({
   setNumProducts,
 }: ProductSelectorProps) => {
   const handleMinusClick = () => {
-    console.log(numProducts);
     setNumProducts((numProducts) => numProducts - 1);
   };
 
   const handlePlusClick = () => {
-    console.log(numProducts);
     setNumProducts((numProducts) => numProducts + 1);
   };
 
@@ -33,7 +31,7 @@ export const ProductSelector = ({
       <MinusButton disabled={numProducts <= 1} onClick={handleMinusClick}>
         -
       </MinusButton>
-      <NumText>{numProducts}</NumText>
+      <NumText title="Current quantity">{numProducts}</NumText>
       <PlusButton onClick={handlePlusClick}>+</PlusButton>
     </Layout>
   );

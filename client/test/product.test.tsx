@@ -1,8 +1,10 @@
-import { render, fireEvent } from "@testing-library/react";
+import { fireEvent } from "@testing-library/react";
 import Product from "../pages/product";
+import { render } from "./test-utils";
 
 test("should be able to increase and decrease product quantity", async () => {
-  const { getByText, getByTitle } = render(<Product />);
+  const { getByText, getByTitle, findByText } = render(<Product />);
+  expect(await findByText("Energy saving light bulb")).toBeInTheDocument();
 
   const increaseQuantity = getByText("+");
 
@@ -19,7 +21,8 @@ test("should be able to increase and decrease product quantity", async () => {
 });
 
 test("should not be able to decrease product quantity past 1", async () => {
-  const { getByText, getByTitle } = render(<Product />);
+  const { getByText, getByTitle, findByText } = render(<Product />);
+  expect(await findByText("Energy saving light bulb")).toBeInTheDocument();
 
   const increaseQuantity = getByText("+");
 
@@ -35,9 +38,9 @@ test("should not be able to decrease product quantity past 1", async () => {
   expect(currentQuantity).toHaveTextContent("1");
 });
 
-
 test("should be able to add items to the basket", async () => {
-  const { getByText, getByTitle } = render(<Product />);
+  const { getByText, getByTitle, findByText } = render(<Product />);
+  expect(await findByText("Energy saving light bulb")).toBeInTheDocument();
 
   const increaseQuantity = getByText("+");
 
