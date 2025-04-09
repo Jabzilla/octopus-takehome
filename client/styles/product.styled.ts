@@ -64,7 +64,7 @@ export const ProductDetailsGrid = styled.div`
     "productImage productPrice numToAddSelector"
     "productImage addToCart addToCart";
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr 0.5fr;
     grid-template-areas:
       "productImage productImage"

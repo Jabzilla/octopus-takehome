@@ -10,11 +10,7 @@ export default function Home() {
             alt="Octopus Energy Logo"
           />
         </figure>
-        <h1>Welcome to the Octopus Energy Frontend code test!</h1>
-        <p>
-          Get started by visiting the <code>/product</code> URL and editing{" "}
-          <code>client/pages/product.js</code>
-        </p>
+        <h1>Hey! Welcome to my solution!</h1>
         <Link href="/product">Go to the product page</Link>
       </div>
     </main>
