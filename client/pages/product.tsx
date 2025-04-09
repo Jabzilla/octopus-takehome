@@ -16,14 +16,22 @@ import {
 import { formatPence } from "../utils/money";
 import { ProductSelector } from "../components/productSelector/ProductSelector";
 import { useState } from "react";
+import { useBasket } from "../context/BasketContext";
+import { BasketItem } from "../types/basket";
 
 export default function Product() {
   const { data } = useProductQuery();
   const [numProducts, setNumProducts] = useState(1);
-
-  console.log(data);
+  const { setBasketItems } = useBasket();
 
   if (data) {
+    const handleAddToCartClick = () => {
+      const newBasketItem: BasketItem = {
+        id: data.Product.id,
+        quantity: numProducts,
+      };
+      setBasketItems((basketItems) => [...basketItems, newBasketItem]);
+    };
     return (
       <Layout>
         <Header />
@@ -45,7 +53,9 @@ export default function Product() {
               numProducts={numProducts}
               setNumProducts={setNumProducts}
             />
-            <AddToCartButton>Add to cart </AddToCartButton>
+            <AddToCartButton onClick={handleAddToCartClick}>
+              Add to cart{" "}
+            </AddToCartButton>
           </ProductDetailsGrid>
         </Section>
         <Section $backgroundColour="hemocyanin">

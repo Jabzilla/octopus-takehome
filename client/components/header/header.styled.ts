@@ -20,12 +20,24 @@ export const LogoImage = styled(Image)`
   max-width: 50vw;
 `;
 
+export const Basket = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: 3rem;
+`;
+
+export const BasketBadge = styled.p`
+  position: relative;
+  background-color: red;
+  border-radius: 50%;
+  padding: 0.2rem;
+  top: 1rem;
+  left: -1rem;
+  height: 1rem;
+`;
+
 export const BasketImage = styled(Image)`
   width: fit-content;
   height: 3rem;
-
-  @media (max-width: 768px) {
-    width: fit-content;
-    height: 3rem;
-  }
 `;

@@ -1,7 +1,19 @@
-import { BasketImage, HeaderWrapper, LogoImage } from "./header.styled";
+import { useBasket } from "../../context/BasketContext";
+import {
+  Basket,
+  BasketBadge,
+  BasketImage,
+  HeaderWrapper,
+  LogoImage,
+} from "./header.styled";
 import Link from "next/link";
 
 export const Header = () => {
+  const { basketItems } = useBasket();
+  const numBasketItems = basketItems.reduce(
+    (sum, item) => sum + item.quantity,
+    0
+  );
   return (
     <HeaderWrapper>
       <Link href="/">
@@ -13,12 +25,15 @@ export const Header = () => {
         />
       </Link>
 
-      <BasketImage
-        src="/basket.svg"
-        alt="An icon of a shopping basket"
-        height={911}
-        width={492}
-      />
+      <Basket>
+        <BasketImage
+          src="/basket.svg"
+          alt="An icon of a shopping basket"
+          height={911}
+          width={492}
+        />
+        <BasketBadge title="Basket items">{numBasketItems}</BasketBadge>
+      </Basket>
     </HeaderWrapper>
   );
 };
