@@ -32,7 +32,9 @@ export const Header = () => {
           height={911}
           width={492}
         />
-        <BasketBadge title="Basket items">{numBasketItems}</BasketBadge>
+        {numBasketItems > 0 && (
+          <BasketBadge title="Basket items">{numBasketItems}</BasketBadge>
+        )}
       </Basket>
     </HeaderWrapper>
   );
