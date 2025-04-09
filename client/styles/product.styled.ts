@@ -24,9 +24,9 @@ const octoColourBackgrounds = (colour: OctopusColour) => {
   }[colour];
 };
 
-export const Section = styled.section<{ backgroundColour: OctopusColour }>`
+export const Section = styled.section<{ $backgroundColour: OctopusColour }>`
   padding: 1rem;
-  ${({ backgroundColour }) => octoColourBackgrounds(backgroundColour)};
+  ${({ $backgroundColour }) => octoColourBackgrounds($backgroundColour)};
 `;
 
 export const FooterText = styled.p`

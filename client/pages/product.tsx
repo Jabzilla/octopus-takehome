@@ -10,7 +10,7 @@ export default function Product() {
   return (
     <div>
       <Header />
-      <Section backgroundColour="siphon">
+      <Section $backgroundColour="siphon">
         <p>Product image</p>
         <p>Product name</p>
         <p>product.power // packet of product.quantity</p>
@@ -20,11 +20,11 @@ export default function Product() {
         </div>
         <p>Add to cart button</p>
       </Section>
-      <Section backgroundColour="hemocyanin">
+      <Section $backgroundColour="hemocyanin">
         <h2>Description</h2>
         <p>Product description</p>
       </Section>
-      <Section backgroundColour="siphon">
+      <Section $backgroundColour="siphon">
         <h2>Specifications</h2>
         <div>
           <p>Brand</p>
@@ -41,7 +41,7 @@ export default function Product() {
           <p>product.colour</p>
         </div>
       </Section>
-      <Section backgroundColour="hemocyanin">
+      <Section $backgroundColour="hemocyanin">
         <FooterText>
           Octopus Energy Ltd is a company registered in England and Wales.
           Registered number: 09263424. Registered office: 33 Holborn, London,
