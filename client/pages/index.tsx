@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "../components/button/Button";
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
           <code>client/pages/product.js</code>
         </p>
         <Link href="/product">Go to the product page</Link>
-        <Button />
       </div>
     </main>
   );

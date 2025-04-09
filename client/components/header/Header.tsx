@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { BasketImage, HeaderWrapper, LogoImage } from "./header.styled";
 import Link from "next/link";
 

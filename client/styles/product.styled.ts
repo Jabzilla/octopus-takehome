@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { OctopusColour } from "../types/colour";
 import Image from "next/image";
+import { Button } from "./button.styled";
 
 export const Layout = styled.div`
   display: flex;
@@ -49,8 +50,8 @@ export const ProductDetailsGrid = styled.div`
   position: relative;
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 5fr 1fr 0.5fr 1fr 1fr;
+  place-items: center stretch;
+  grid-template-columns: 1fr 0.5fr;
   grid-template-areas:
     "productImage productImage"
     "productTitle productTitle"
@@ -93,4 +94,9 @@ export const SpecificationsGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
+`;
+
+export const AddToCartButton = styled(Button)`
+  grid-area: addToCart;
+  height: 4rem;
 `;

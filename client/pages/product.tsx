@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Header } from "../components/header/Header";
 import { useProductQuery } from "../hooks/useProductQuery";
 import {
+  AddToCartButton,
   FooterText,
   Layout,
   ProductDetails,
@@ -13,9 +14,12 @@ import {
   SpecificationsGrid,
 } from "../styles/product.styled";
 import { formatPence } from "../utils/money";
+import { ProductSelector } from "../components/productSelector/ProductSelector";
+import { useState } from "react";
 
 export default function Product() {
   const { data } = useProductQuery();
+  const [numProducts, setNumProducts] = useState(1);
 
   console.log(data);
 
@@ -37,8 +41,11 @@ export default function Product() {
             </ProductDetails>
 
             <ProductPrice>{formatPence(data.Product.price)}</ProductPrice>
-            <p>num product selector</p>
-            <p>Add to cart button</p>
+            <ProductSelector
+              numProducts={numProducts}
+              setNumProducts={setNumProducts}
+            />
+            <AddToCartButton>Add to cart </AddToCartButton>
           </ProductDetailsGrid>
         </Section>
         <Section $backgroundColour="hemocyanin">
