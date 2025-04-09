@@ -68,5 +68,3 @@ Notes:
 - This has not been set up with any type of CSS-in-JS, but if that is something you would like to add, please feel free.
 
 Best of luck!
-
-// Just added TS
