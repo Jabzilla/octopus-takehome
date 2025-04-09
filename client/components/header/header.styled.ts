@@ -9,7 +9,7 @@ export const HeaderWrapper = styled.div`
   padding: 1rem;
   overflow: hidden;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
 `;

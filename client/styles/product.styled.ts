@@ -8,6 +8,11 @@ export const Layout = styled.div`
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
+  @media (min-width: 768px) {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 const octoColourBackgrounds = (colour: OctopusColour) => {
@@ -36,6 +41,7 @@ const octoColourBackgrounds = (colour: OctopusColour) => {
 export const Section = styled.section<{ $backgroundColour: OctopusColour }>`
   padding: 1rem;
   width: calc(100% - 2rem);
+
   ${({ $backgroundColour }) => octoColourBackgrounds($backgroundColour)};
 `;
 
@@ -51,13 +57,22 @@ export const ProductDetailsGrid = styled.div`
   display: grid;
   gap: 1rem;
   place-items: center stretch;
-  grid-template-columns: 1fr 0.5fr;
+  grid-template-columns: 1fr 0.5fr 0.5fr;
   grid-template-areas:
-    "productImage productImage"
-    "productTitle productTitle"
-    "productDetails productDetails"
-    "productPrice numToAddSelector"
-    "addToCart addToCart";
+    "productImage productTitle productTitle"
+    "productImage productDetails productDetails"
+    "productImage productPrice numToAddSelector"
+    "productImage addToCart addToCart";
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-areas:
+      "productImage productImage"
+      "productTitle productTitle"
+      "productDetails productDetails"
+      "productPrice numToAddSelector"
+      "addToCart addToCart";
+  }
 `;
 
 export const ProductImage = styled(Image)`
