@@ -1,4 +1,6 @@
+import { Header } from "../components/header/Header";
 import { useProductQuery } from "../hooks/useProductQuery";
+import { FooterText, Section } from "../styles/product.styled";
 
 export default function Product() {
   const { data } = useProductQuery();
@@ -7,8 +9,8 @@ export default function Product() {
 
   return (
     <div>
-      <p>Header bar</p>
-      <section>
+      <Header />
+      <Section backgroundColour="siphon">
         <p>Product image</p>
         <p>Product name</p>
         <p>product.power // packet of product.quantity</p>
@@ -17,12 +19,12 @@ export default function Product() {
           <p>num product selector</p>
         </div>
         <p>Add to cart button</p>
-      </section>
-      <section>
+      </Section>
+      <Section backgroundColour="hemocyanin">
         <h2>Description</h2>
         <p>Product description</p>
-      </section>
-      <section>
+      </Section>
+      <Section backgroundColour="siphon">
         <h2>Specifications</h2>
         <div>
           <p>Brand</p>
@@ -38,15 +40,14 @@ export default function Product() {
           <p>Colour</p>
           <p>product.colour</p>
         </div>
-      </section>
-      <section>
-        <p>
+      </Section>
+      <Section backgroundColour="hemocyanin">
+        <FooterText>
           Octopus Energy Ltd is a company registered in England and Wales.
           Registered number: 09263424. Registered office: 33 Holborn, London,
           EC1N 2HT. Trading office: 20-24 Broadwick Street, London, W1F 8HT
-        </p>
-      </section>
-      Product page
+        </FooterText>
+      </Section>
     </div>
   );
 }

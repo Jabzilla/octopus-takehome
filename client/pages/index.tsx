@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../components/button/Button";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
           Get started by visiting the <code>/product</code> URL and editing{" "}
           <code>client/pages/product.js</code>
         </p>
+        <Link href="/product">Go to the product page</Link>
         <Button />
       </div>
     </main>
