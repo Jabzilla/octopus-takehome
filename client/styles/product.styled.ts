@@ -5,6 +5,8 @@ import Image from "next/image";
 export const Layout = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
 `;
 
 const octoColourBackgrounds = (colour: OctopusColour) => {
@@ -32,6 +34,7 @@ const octoColourBackgrounds = (colour: OctopusColour) => {
 
 export const Section = styled.section<{ $backgroundColour: OctopusColour }>`
   padding: 1rem;
+  width: calc(100% - 2rem);
   ${({ $backgroundColour }) => octoColourBackgrounds($backgroundColour)};
 `;
 

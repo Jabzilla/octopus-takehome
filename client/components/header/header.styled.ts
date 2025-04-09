@@ -9,6 +9,9 @@ export const HeaderWrapper = styled.div`
   padding: 1rem;
   overflow: hidden;
   align-items: center;
+  width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
 `;
 
 export const LogoImage = styled(Image)`
